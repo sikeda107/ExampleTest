@@ -6,7 +6,7 @@ import static org.junit.Assert.assertEquals;
 public class AbstractHelloTest {
 
     @Test
-    public void publicSayHello() throws Exception {
+    public void publicSayHelloTest() throws Exception {
         //抽象クラスのモック化
         AbstractHello abstractHelloMock = Mockito.mock(AbstractHello.class, Mockito.CALLS_REAL_METHODS);
         // 引数有りのテスト
@@ -16,7 +16,7 @@ public class AbstractHelloTest {
     }
 
     @Test
-    public void protectedSayHello() throws Exception {
+    public void protectedSayHelloTest() throws Exception {
         //抽象クラスのモック化
         AbstractHello abstractHelloMock = Mockito.mock(AbstractHello.class, Mockito.CALLS_REAL_METHODS);
         // 引数有りのテスト
@@ -26,7 +26,7 @@ public class AbstractHelloTest {
     }
 
     @Test
-    public void sayHello() throws Exception {
+    public void sayHelloTest() throws Exception {
         //抽象クラスのモック化
         AbstractHello abstractHelloMock = Mockito.mock(AbstractHello.class, Mockito.CALLS_REAL_METHODS);
         // 引数有りのテスト
