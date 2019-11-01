@@ -18,4 +18,9 @@ public class HelloTest {
     public void abstractSayHelloTest() {
         fail("not implemented yet");
     }
+
+    @Test
+    public void privateSayHelloTest() {
+        fail("not implemented yet");
+    }
 }
