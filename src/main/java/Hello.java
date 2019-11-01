@@ -21,4 +21,14 @@ public class Hello extends AbstractHello {
         if (Objects.isNull(name)) return "Hello!!";
         return "Hello," + name + "!!";
     }
+
+    /**
+     * Privateメソッド
+     * @param name
+     * @return
+     */
+    private String privateSayHello(String name){
+        if (Objects.isNull(name)) return "Hello!!";
+        return "Hello," + name + "!!";
+    }
 }
