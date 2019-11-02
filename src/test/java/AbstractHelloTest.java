@@ -2,6 +2,7 @@ import org.junit.Test;
 import org.mockito.Mockito;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
 public class AbstractHelloTest {
 
@@ -13,6 +14,35 @@ public class AbstractHelloTest {
         assertEquals("Hello,Tom!!", abstractHelloMock.publicSayHello("Tom"));
         //引数がnullのテスト
         assertEquals("Hello!!", abstractHelloMock.publicSayHello(null));
+    }
+
+    @Test
+    public void publicSayHelloTest2() throws Exception {
+        //抽象クラスのモック化
+        AbstractHello abstractHelloMock = Mockito.mock(AbstractHello.class);
+        //メソッドの部分モック化
+        Mockito.doCallRealMethod().when(abstractHelloMock).publicSayHello("Tom");
+
+        // 引数が「Tom」のテスト
+        assertEquals("Hello,Tom!!", abstractHelloMock.publicSayHello("Tom"));
+
+        // 引数が「Sara」のテスト
+        assertNull(abstractHelloMock.publicSayHello("Sara"));
+    }
+
+    @Test
+    public void publicSayHelloVoidTest() throws Exception {
+        //抽象クラスのモック化
+        AbstractHello abstractHelloMock = Mockito.mock(AbstractHello.class);
+        //メソッドの部分モック化
+        Mockito.doCallRealMethod().when(abstractHelloMock).publicSayHelloVoid();
+
+        // Voidメソッドのテスト
+        assertEquals("Hello!!", abstractHelloMock.publicSayHelloVoid());
+
+        // 別のメソッドpublicSayHelloの引数を「Tom」としてテスト
+        // assertEquals("Hello,Tom!!", abstractHelloMock.publicSayHello("Tom"));
+        assertNull(abstractHelloMock.publicSayHello("Tom"));
     }
 
     @Test
