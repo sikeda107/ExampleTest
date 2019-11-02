@@ -59,9 +59,26 @@ public class AbstractHelloTest {
     public void sayHelloTest() throws Exception {
         //抽象クラスのモック化
         AbstractHello abstractHelloMock = Mockito.mock(AbstractHello.class, Mockito.CALLS_REAL_METHODS);
+
         // 引数有りのテスト
         assertEquals("Hello,Marry!!", abstractHelloMock.sayHello("Marry"));
         //引数がnullのテスト
         assertEquals("Hello!!", abstractHelloMock.sayHello(null));
+    }
+
+    @Test
+    public void callAbstractPublicSayHelloTest() throws Exception{
+        //抽象クラスのモック化
+        AbstractHello abastractHello = Mockito.mock(AbstractHello.class, Mockito.CALLS_REAL_METHODS);
+        //テスト対象のメソッドが呼び出す抽象メソッドのモック化
+        Mockito.when(abastractHello.abstractPublicSayHello("Kevin")).thenReturn("Hi,Kevin!!");
+
+        //引数にKevinを与えた場合のテスト
+        String name = "Kevin";
+        assertEquals("Hi,Kevin!!", abastractHello.callAbstractPublicSayHello(name));
+
+        //引数にKevin以外を与えた場合のテスト
+        name = "Sara";
+        assertNull(abastractHello.callAbstractPublicSayHello(name));
     }
 }
