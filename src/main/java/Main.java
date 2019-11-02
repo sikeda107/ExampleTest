@@ -13,6 +13,7 @@ public class Main {
         greetings.add(hello.abstractProtectedSayHello("AbstractProtected"));
         greetings.add(hello.abstractSayHello("AbstractNone"));
         greetings.add(hello.publicSayHello("RealPublic"));
+        greetings.add(hello.publicSayHelloVoid());
         greetings.add(hello.protectedSayHello("RealProtected"));
         greetings.add(hello.sayHello("RealNone"));
         // 挨拶をする(※forEachとメソッド参照を使う)
