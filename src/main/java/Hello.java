@@ -23,12 +23,19 @@ public class Hello extends AbstractHello {
     }
 
     /**
-     * Privateメソッド
+     * 引数ありPrivateメソッド
      * @param name
-     * @return
+     * @return Hello,{name}!!
      */
     private String privateSayHello(String name){
         if (Objects.isNull(name)) return "Hello!!";
         return "Hello," + name + "!!";
+    }
+    /**
+     * 引数無しPrivateメソッド
+     * @return Hello!!
+     */
+    private String privateSayHello2(){
+        return "Hello!!";
     }
 }
