@@ -1,5 +1,3 @@
-# Example Test
-
 ## Background
   ※特に意味はないセクションです。
   テストコードをちゃんと書いたことがないなと。ソフトウェア工学で単体テストとか結合テストとか色々学んだけど、テストコードは書かなかった。Excelポチポチのテストに意味がないとはそこまで思わないけど、何回もテストしたり、寝てる間に自動でテストしてくれたりとかそういうのはできないよねって。あとは単体レベルのリグレッションとかちゃんとテストコード書けば、コマンド一発できるんだから積極的に書い行くべきだと思ったり。考慮漏れとかあっても、テストコード追加してコマンド叩けばいいよね。（テストコードが正しいかテストする方法がないのが辛いけど。）コードレビューとか正直、単体テストレベル通らないコードをレビューするのはレビュー担当者にとって相当な負担なんじゃないかと。
@@ -20,6 +18,7 @@ JunitでJavaのテストコードを書きました。流れは[参考文献](ht
 ## Description
 今回のコードはGithubの[このリポジトリ](https://github.com/sikeda107/ExampleTest)にあげてあります。
 プロジェクトの構成で、
+
 - 実装用コードのディレクトリのパスは `Example/src/main/java/`
 - テスト用コードのディレクトリのパスは`Example/src/test/java/`
 です。
@@ -43,6 +42,7 @@ JunitでJavaのテストコードを書きました。流れは[参考文献](ht
 ### Abstract Helloクラス
 
 抽象クラスです。
+
 - 3つの抽象メソッドと、
   - abstractPublicSayHello
   - abstractProtectedSayHello
@@ -289,7 +289,7 @@ public void プライベートメソッドのテスト() throws Exception {
 ```
 
 #### getDeclaredMethodメソッド
-[公式 JavaSE13 & JDK13](https://docs.oracle.com/javase/jp/13/docs/api/java.base/java/lang/Class.html#getDeclaredMethod(java.lang.String,java.lang.Class...))
+[公式 JavaSE13 & JDK13](https://docs.oracle.com/javase/jp/13/docs/api/java.base/java/lang/Class.html#getDeclaredMethod(java.lang.String,java.lang.Class...\))
 
 >public Method getDeclaredMethod​(String name, Class<?>... parameterTypes) throws NoSuchMethodException, SecurityException
 パラメータ:
@@ -301,7 +301,7 @@ parameterTypes - パラメータ配列
 Classオブジェクトで定義されているこのメソッドで、メソッドのオブジェクトを取得します。
 
 #### setAccessibleメソッド
-[公式 JavaSE13 & JDK13](https://docs.oracle.com/javase/jp/13/docs/api/java.base/java/lang/reflect/Method.html#setAccessible(boolean))
+[公式 JavaSE13 & JDK13](https://docs.oracle.com/javase/jp/13/docs/api/java.base/java/lang/reflect/Method.html#setAccessible(boolean\))
 
 >public void setAccessible​(boolean flag)
 パラメータ:
@@ -313,7 +313,7 @@ SecurityException - リクエストがセキュリティ・マネージャによ
 getDeclaredMethodメソッドで取得したMethodオブジェクトに対して、アクセス権を設定できます。戻り値はvoidのようです。
 
 #### invokeメソッド
-[公式 JavaSE13 & JDK13](https://docs.oracle.com/javase/jp/13/docs/api/java.base/java/lang/reflect/Method.html#invoke(java.lang.Object,java.lang.Object...))
+[公式 JavaSE13 & JDK13](https://docs.oracle.com/javase/jp/13/docs/api/java.base/java/lang/reflect/Method.html#invoke(java.lang.Object,java.lang.Object...\) )
 
 >public Object invoke​(Object obj, Object... args)
 パラメータ:
